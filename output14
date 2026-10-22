@@ -1,0 +1,20 @@
+Nmap Network Scanning
+---------------------
+1. Ping Scan
+2. Quick Scan
+3. Regular Scan
+4. Intense Scan
+Enter your choice: 3
+Enter target IP/domain: 192.168.1.1
+
+Executing scan...
+
+Nmap scan report for 192.168.1.1
+Host is up (0.0050s latency).
+
+PORT    STATE SERVICE
+22/tcp  open  ssh
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned.
