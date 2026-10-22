@@ -1,0 +1,48 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char target[100];
+    char command[200];
+    int choice;
+
+    printf("Nmap Network Scanning\n");
+    printf("---------------------\n");
+    printf("1. Ping Scan\n");
+    printf("2. Quick Scan\n");
+    printf("3. Regular Scan\n");
+    printf("4. Intense Scan\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    printf("Enter target IP/domain: ");
+    scanf("%99s", target);
+
+    switch (choice) {
+        case 1:
+            snprintf(command, sizeof(command),
+                     "nmap -sn %s", target);
+            break;
+        case 2:
+            snprintf(command, sizeof(command),
+                     "nmap -F %s", target);
+            break;
+        case 3:
+            snprintf(command, sizeof(command),
+                     "nmap %s", target);
+            break;
+        case 4:
+            snprintf(command, sizeof(command),
+                     "nmap -A %s", target);
+            break;
+        default:
+            printf("Invalid choice!\n");
+            return 1;
+    }
+
+    printf("\nExecuting scan...\n\n");
+    system(command);
+
+    return 0;
+}
